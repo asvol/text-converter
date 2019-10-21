@@ -31,6 +31,10 @@ rmdir /s /q bin\publish
 
 mkdir bin\publish
 
+cp tools/index.html bin\publish\index.html
+sed -i "s/__VERSION__/%VERSION%/g" bin/publish/index.html
+
+
 echo %MSBBUILD% /consoleloggerparameters:ErrorsOnly /maxcpucount /nologo /verbosity:quiet /t:publish /p:ApplicationVersion=%VERSION%;Configuration=Release;PublishDir=%PUBLISH_DIR% %SOLUTION_FILE%
 %MSBBUILD% /consoleloggerparameters:ErrorsOnly /maxcpucount /nologo /verbosity:quiet /t:publish /p:ApplicationVersion=%VERSION%;Configuration=Release;PublishDir=%PUBLISH_DIR% %SOLUTION_FILE%
 
@@ -45,5 +49,3 @@ echo "|_____/ \____/ \_____\_____|______|_____/_____/ "
 )
 
 if not %BUILD_STATUS%==0 echo "=======! Build failed !==========" && exit /b 1
-
-xcopy bin\release\NLog.config  bin\publish

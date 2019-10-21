@@ -27,6 +27,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>http://textconverter.asv.me/</InstallUrl>
     <UpdateUrl>http://textconverter.asv.me/</UpdateUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>index.html</WebPage>
     <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.2</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
@@ -257,4 +259,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+
 </Project>
