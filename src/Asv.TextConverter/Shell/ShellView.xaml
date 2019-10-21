@@ -28,14 +28,14 @@
             <ContentControl cal:Bind.Model="{Binding Rules}"/>
         </mah:FlyoutsControl>
     </mah:MetroWindow.Flyouts>
-    <DockPanel Margin="0,0,0,0"  textConverter:EnableDragHelper.EnableDrag="True" MouseDown="UIElement_OnMouseDown">
+    <DockPanel Margin="0,0,0,0"  textConverter:EnableDragHelper.EnableDrag="True" PreviewMouseDown="UIElement_OnMouseDown">
         <Menu DockPanel.Dock="Top" HorizontalAlignment="Left">
-            <MenuItem Header="Файл">
-                <MenuItem Header="Открыть" x:Name="Open"/>
-                <MenuItem Header="Сохранить" x:Name="Save"/>
+            <MenuItem Header="File">
+                <MenuItem Header="Open" x:Name="Open"/>
+                <MenuItem Header="Save" x:Name="Save"/>
             </MenuItem>
             
-            <MenuItem Header="Заменить" x:Name="Update">
+            <MenuItem Header="Convert" x:Name="Update">
 
             </MenuItem>
         </Menu>

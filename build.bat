@@ -5,8 +5,6 @@ whoami
 
 SET ASSM_INFO_FILE="./src/Asv.TextConverter/Properties/AssemblyInfo.cs"
 SET SOLUTION_FILE=./src/Asv.TextConverter.sln
-SET RELEASE_FILE="./bin/release/Asv.TextConverter.exe"
-SET PUBLISH_FILE="./bin/publish/asv-text-converter.exe"
 SET PUBLISH_DIR="../../bin/publish/"
 
 SET BASH_PATH=%SYSTEMDRIVE%\Users\%USERNAME%\.babun\cygwin\bin\
@@ -33,8 +31,8 @@ rmdir /s /q bin\publish
 
 mkdir bin\publish
 
-echo %MSBBUILD% /consoleloggerparameters:ErrorsOnly /maxcpucount /nologo /verbosity:quiet /t:release /p:ApplicationVersion=%VERSION%;Configuration=Release;PublishDir=%PUBLISH_DIR% %SOLUTION_FILE%
-%MSBBUILD% /consoleloggerparameters:ErrorsOnly /maxcpucount /nologo /verbosity:quiet /t:Build /p:ApplicationVersion=%VERSION%;Configuration=Release;PublishDir=%PUBLISH_DIR% %SOLUTION_FILE%
+echo %MSBBUILD% /consoleloggerparameters:ErrorsOnly /maxcpucount /nologo /verbosity:quiet /t:publish /p:ApplicationVersion=%VERSION%;Configuration=Release;PublishDir=%PUBLISH_DIR% %SOLUTION_FILE%
+%MSBBUILD% /consoleloggerparameters:ErrorsOnly /maxcpucount /nologo /verbosity:quiet /t:publish /p:ApplicationVersion=%VERSION%;Configuration=Release;PublishDir=%PUBLISH_DIR% %SOLUTION_FILE%
 
 set BUILD_STATUS=%ERRORLEVEL%
 if %BUILD_STATUS%==0 (
@@ -47,7 +45,5 @@ echo "|_____/ \____/ \_____\_____|______|_____/_____/ "
 )
 
 if not %BUILD_STATUS%==0 echo "=======! Build failed !==========" && exit /b 1
-
-zsh "tools/merge_release.sh" %RELEASE_FILE% %PUBLISH_FILE%
 
 xcopy bin\release\NLog.config  bin\publish

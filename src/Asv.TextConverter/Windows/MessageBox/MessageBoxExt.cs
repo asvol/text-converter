@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Asv.TextConverter.Windows.MessageBox;
 using Caliburn.Micro;
 
 namespace Asv.TextConverter

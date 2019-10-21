@@ -35,6 +35,7 @@ namespace Asv.TextConverter
             Rules.Parent = this;
             _cfg = _cfgService.Get<ShellViewModelConfig>();
             LoadConfig();
+            DisplayName = "Text converter";
 
         }
 
@@ -93,7 +94,25 @@ namespace Asv.TextConverter
 
         public void Save()
         {
-            
+            try
+            {
+                string fileName = null;
+                string ext = null;
+                if (!_cfg.LastFile.IsNullOrWhiteSpace())
+                {
+                    fileName = Path.GetFileNameWithoutExtension(_cfg.LastFile);
+                    ext = Path.GetExtension(_cfg.LastFile);
+                }
+
+                fileName = IoC.Get<IWindowManager>().ShowSaveFileDialog("Save file", initialDirectory:_cfg.LastOpenFileFolder, fileName: fileName+"-convert"+ext);
+                if (fileName == null) return;
+                File.WriteAllLines(fileName,Items.Select(_=>_.Result), Encoding.GetEncoding(1251));
+            }
+            catch (Exception e)
+            {
+                IoC.Get<IWindowManager>().ShowError("Error occured to save file", e.Message, e);
+                _logger.Error(e, $"Error occured to save file:{e.Message}");
+            }
         }
 
         public void Open()

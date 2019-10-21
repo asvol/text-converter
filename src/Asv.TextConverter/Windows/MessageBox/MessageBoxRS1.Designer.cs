@@ -8,7 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Asv.TextConverter {
+namespace Asv.TextConverter.Windows.MessageBox {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -36,7 +39,7 @@ namespace Asv.TextConverter {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Asv.Avialab.Core.Windows.MessageBox.MessageBoxRS", typeof(MessageBoxRS).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Asv.TextConverter.Windows.MessageBox.MessageBoxRS", typeof(MessageBoxRS).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -58,7 +61,7 @@ namespace Asv.TextConverter {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Отмена.
+        ///   Looks up a localized string similar to Cancel.
         /// </summary>
         internal static string CaliburnDialogs_AskUserOkCancel_Cancel {
             get {
@@ -67,7 +70,7 @@ namespace Asv.TextConverter {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Нет.
+        ///   Looks up a localized string similar to No.
         /// </summary>
         internal static string CaliburnDialogs_AskUserYesNo_No {
             get {
@@ -76,7 +79,7 @@ namespace Asv.TextConverter {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Да.
+        ///   Looks up a localized string similar to Yes.
         /// </summary>
         internal static string CaliburnDialogs_AskUserYesNo_Yes {
             get {
@@ -85,7 +88,7 @@ namespace Asv.TextConverter {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Подробнее.
+        ///   Looks up a localized string similar to More.
         /// </summary>
         internal static string CaliburnDialogs_ShowError_More {
             get {
@@ -94,7 +97,7 @@ namespace Asv.TextConverter {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ок.
+        ///   Looks up a localized string similar to OK.
         /// </summary>
         internal static string CaliburnDialogs_ShowError_Ok {
             get {
