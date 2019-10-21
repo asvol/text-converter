@@ -91,6 +91,11 @@ namespace Asv.TextConverter
 
         #endregion
 
+        public void Save()
+        {
+            
+        }
+
         public void Open()
         {
             try

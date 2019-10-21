@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Caliburn.Micro;
@@ -53,9 +54,12 @@ namespace Asv.TextConverter
             {
                 if (value == _regexTo) return;
                 _regexTo = value;
+                
                 NotifyOfPropertyChange(() => RegexTo);
             }
         }
+
+        
 
         public void RuleUp(RuleViewModel vm)
         {

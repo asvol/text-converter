@@ -1,0 +1,34 @@
+{
+  "ShellViewModelConfig": {
+    "LastOpenFileFolder": null,
+    "LastFile": null
+  },
+  "RuleListViewModelConfig": {
+    "Rules": [
+      {
+        "DisplayName": "Конденсаторы мкФ - u",
+        "IsEnabled": true,
+        "RegexFrom": "(^C.*)([0-9,]+)([ ]*мк[Ф]*)(.*)",
+        "RegexTo": "$1$2u  $4"
+      },
+      {
+        "DisplayName": "Катушка мкГн - uH",
+        "IsEnabled": true,
+        "RegexFrom": "(^L.*)([0-9,]+)([ ]*мкГн*)(.*)",
+        "RegexTo": "$1$2uH   $4"
+      },
+      {
+        "DisplayName": "Резистор к(RU) - K(EN)",
+        "IsEnabled": true,
+        "RegexFrom": "(^R.*)([0-9,]+)([ ]\\u043Aк*)(.*)",
+        "RegexTo": "$1$2K$4"
+      },
+      {
+        "DisplayName": "ТАНТАЛ-D TANTAL-D",
+        "IsEnabled": true,
+        "RegexFrom": "\\u0422\\u0410\\u041D\\u0422\\u0410\\u041B-D",
+        "RegexTo": "TANTAL-D"
+      }
+    ]
+  }
+}

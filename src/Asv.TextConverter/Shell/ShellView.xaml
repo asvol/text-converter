@@ -32,6 +32,7 @@
         <Menu DockPanel.Dock="Top" HorizontalAlignment="Left">
             <MenuItem Header="Файл">
                 <MenuItem Header="Открыть" x:Name="Open"/>
+                <MenuItem Header="Сохранить" x:Name="Save"/>
             </MenuItem>
             
             <MenuItem Header="Заменить" x:Name="Update">
