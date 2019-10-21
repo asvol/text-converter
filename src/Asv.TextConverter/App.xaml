@@ -1,0 +1,26 @@
+﻿<Application x:Class="Asv.TextConverter.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Asv.TextConverter">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Asv.TextConverter;component/Icons.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Steel.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            <local:InverseBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter"/>
+            <local:EnumToVisibilityConverter x:Key="EnumToVisibilityConverter"/>
+            <local:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
+            <local:ResourceByStringConverter x:Key="ResourceByStringConverter"/>
+            <local:VisibilityByResourceStringConverter x:Key="VisibilityByResourceStringConverter"/>
+            <local:CombinedBooleanVisibilityConverter x:Key="CombinedBooleanVisibilityConverter" />
+            <local:NullNotVisibleConverter x:Key="NullNotVisibleConverter" />
+            <local:HighlightConverter x:Key="HighlightConverter" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

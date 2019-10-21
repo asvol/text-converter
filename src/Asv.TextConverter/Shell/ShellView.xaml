@@ -1,0 +1,88 @@
+﻿<mah:MetroWindow x:Class="Asv.TextConverter.ShellView"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 
+                 xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                 xmlns:cal="http://www.caliburnproject.org"
+                 xmlns:textConverter="clr-namespace:Asv.TextConverter"
+                 mc:Ignorable="d"
+                 Title="{Binding DisplayName}"
+                 IsWindowDraggable="True"
+                 GlowBrush="{DynamicResource AccentColorBrush}"
+                 BorderThickness="1"
+                 SaveWindowPosition="True"
+                 x:Name="Shell"
+                 Height="484" Width="879.514">
+    <mah:MetroWindow.RightWindowCommands>
+        <mah:WindowCommands>
+            <Button Content="Правила замены" cal:Message.Attach="OpenSettings"/>
+        </mah:WindowCommands>
+    </mah:MetroWindow.RightWindowCommands>
+    <mah:MetroWindow.Flyouts>
+        <mah:FlyoutsControl>
+            <mah:Flyout Width="600" Theme="Accent" Position="Right" Header="{Binding Rules.DisplayName}"  IsOpen="{Binding IsSettingsOpened}">
+                <textConverter:RuleListView Margin="10" DataContext="{Binding Rules}"/>
+            </mah:Flyout>
+            <ContentControl cal:Bind.Model="{Binding Rules}"/>
+        </mah:FlyoutsControl>
+    </mah:MetroWindow.Flyouts>
+    <DockPanel Margin="0,0,0,0"  textConverter:EnableDragHelper.EnableDrag="True" MouseDown="UIElement_OnMouseDown">
+        <Menu DockPanel.Dock="Top" HorizontalAlignment="Left">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Открыть" x:Name="Open"/>
+            </MenuItem>
+            
+            <MenuItem Header="Заменить" x:Name="Update">
+
+            </MenuItem>
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom" Background="{DynamicResource AccentColorBrush}" MaxHeight="25">
+            
+        </StatusBar>
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <GridSplitter Width="5" Grid.Row="0" Grid.Column="1" Background="Black" Opacity="1" ResizeBehavior="PreviousAndNext"/>
+            <ListBox Margin="5" x:Name="SourceList" Grid.Column="0" ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" ScrollViewer.VerticalScrollBarVisibility="Disabled" >
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Padding" Value="0"/>
+                        <Setter Property="Margin" Value="0"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBox.ItemTemplate>
+                    <DataTemplate DataType="textConverter:TextLineViewModel">
+                        <StackPanel Orientation="Horizontal" Height="15">
+                            <CheckBox Margin="5,0" Background="Transparent" BorderThickness="0" IsChecked="{Binding IsEnabled}" Height="15" Width="15" />
+                            <TextBlock FontFamily="Consolas" Text="{Binding Source}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <ListBox Margin="5" x:Name="ResultList" Grid.Column="2" ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Padding" Value="0"/>
+                        <Setter Property="Margin" Value="0"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBox.ItemTemplate>
+                    <DataTemplate DataType="textConverter:TextLineViewModel">
+                        <StackPanel Orientation="Horizontal" Height="15">
+                            <TextBlock FontFamily="Consolas" Text="{Binding Result}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+        
+    </DockPanel>
+</mah:MetroWindow>
