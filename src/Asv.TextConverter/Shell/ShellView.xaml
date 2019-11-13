@@ -33,6 +33,7 @@
             <MenuItem Header="File">
                 <MenuItem Header="Open" x:Name="Open"/>
                 <MenuItem Header="Save" x:Name="Save"/>
+                <MenuItem Header="Open rules folder" x:Name="OpenRulesFolder"/>
             </MenuItem>
             
             <MenuItem Header="Convert" x:Name="Update">

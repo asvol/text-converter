@@ -14,8 +14,8 @@ namespace Asv.TextConverter
         private readonly string _fileName;
         private readonly Dictionary<string, JToken> _values;
         private readonly ReaderWriterLockSlim _rw = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
-        
-        
+
+        public string FilePath => _fileName;
 
         public JsonOneFileConfiguration(string fileName)
         {

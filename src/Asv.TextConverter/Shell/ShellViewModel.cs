@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.Composition;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -37,6 +38,21 @@ namespace Asv.TextConverter
             LoadConfig();
             DisplayName = "Text converter";
 
+        }
+
+        public void OpenRulesFolder()
+        {
+            try
+            {
+                var folder = (_cfgService as JsonOneFileConfiguration)?.FilePath;
+                if (folder.IsNullOrWhiteSpace()) return;
+                Process.Start("cmd", $"/c start {Path.GetDirectoryName(folder)}");
+            }
+            catch (Exception e)
+            {
+                IoC.Get<IWindowManager>().ShowError("Error occured to open folder", e.Message, e);
+                _logger.Error(e, $"Error occured to open folder:{e.Message}");
+            }
         }
 
         #region Settings
