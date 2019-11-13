@@ -46,7 +46,9 @@ namespace Asv.TextConverter
             {
                 var folder = (_cfgService as JsonOneFileConfiguration)?.FilePath;
                 if (folder.IsNullOrWhiteSpace()) return;
-                Process.Start("cmd", $"/c start {Path.GetDirectoryName(folder)}");
+                var dir = Path.GetFullPath(folder);
+                dir = Path.GetDirectoryName(dir);
+                Process.Start(new ProcessStartInfo("cmd", $"/c start {dir}") );
             }
             catch (Exception e)
             {
