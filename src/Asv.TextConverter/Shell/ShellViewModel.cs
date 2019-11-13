@@ -110,6 +110,8 @@ namespace Asv.TextConverter
             }
             catch (Exception e)
             {
+                _cfg.LastFile = null;
+                _cfg.LastOpenFileFolder = null;
                 IoC.Get<IWindowManager>().ShowError("Error occured to save file", e.Message, e);
                 _logger.Error(e, $"Error occured to save file:{e.Message}");
             }
@@ -127,6 +129,8 @@ namespace Asv.TextConverter
             }
             catch (Exception e)
             {
+                _cfg.LastFile = null;
+                _cfg.LastOpenFileFolder = null;
                 IoC.Get<IWindowManager>().ShowError("Error occured to Open file", e.Message, e);
                 _logger.Error(e, $"Error occured to open file:{e.Message}");
             }

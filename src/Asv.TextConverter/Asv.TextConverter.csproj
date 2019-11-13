@@ -27,6 +27,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>http://textconverter.asv.me/</InstallUrl>
     <UpdateUrl>http://textconverter.asv.me/</UpdateUrl>
+    <ProductName>TextConverter</ProductName>
+    <PublisherName>Alexey Voloshkevich</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.html</WebPage>
     <ApplicationRevision>2</ApplicationRevision>
@@ -224,7 +226,6 @@
     <Content Include="config.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Asv.TextConverter_TemporaryKey.pfx" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -259,5 +260,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
 </Project>
