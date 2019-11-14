@@ -22,7 +22,7 @@
     </mah:MetroWindow.RightWindowCommands>
     <mah:MetroWindow.Flyouts>
         <mah:FlyoutsControl>
-            <mah:Flyout Width="600" Theme="Accent" Position="Right" Header="{Binding Rules.DisplayName}"  IsOpen="{Binding IsSettingsOpened}">
+            <mah:Flyout Width="1000" Theme="Accent" Position="Right" Header="{Binding Rules.DisplayName}"  IsOpen="{Binding IsSettingsOpened}">
                 <textConverter:RuleListView Margin="10" DataContext="{Binding Rules}"/>
             </mah:Flyout>
             <ContentControl cal:Bind.Model="{Binding Rules}"/>

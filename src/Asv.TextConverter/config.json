@@ -1,5 +1,7 @@
 {
   "ShellViewModelConfig": {
+    "LastOpenFileFolder": "E:\\tmp",
+    "LastFile": "E:\\tmp\\РАПГ.468347.001 [6] - Выключатель+.pnp"
   },
   "RuleListViewModelConfig": {
     "Rules": [
@@ -10,25 +12,13 @@
         "RegexTo": "$1$2u  $4"
       },
       {
-        "DisplayName": "Катушка мкГн - uH",
-        "IsEnabled": true,
-        "RegexFrom": "(^L.*)([0-9,]+)([ ]*мкГн*)(.*)",
-        "RegexTo": "$1$2uH   $4"
-      },
-      {
-        "DisplayName": "Резистор к(RU) - K(EN)",
-        "IsEnabled": true,
-        "RegexFrom": "(^R.*)([0-9,]+)([ ]\\u043A[\\u041E\\u043C]*)(.*)",
-        "RegexTo": "$1$2K$4"
-      },
-      {
         "DisplayName": "ТАНТАЛ-D TANTAL-D",
         "IsEnabled": true,
         "RegexFrom": "\\u0422\\u0410\\u041D\\u0422\\u0410\\u041B-D",
         "RegexTo": "TANTAL_D"
       },
       {
-        "DisplayName": "Перевернуть C + _",
+        "DisplayName": " Конденсаторы Перевернуть C + _",
         "IsEnabled": true,
         "RegexFrom": "(^C.*)([C])([0-9]+)(.*)",
         "RegexTo": "$1$3_$2$4"
@@ -46,10 +36,40 @@
         "RegexTo": "$1$4$2$3$5"
       },
       {
+        "DisplayName": "Катушка мкГн - uH",
+        "IsEnabled": true,
+        "RegexFrom": "(^L.*)([0-9,]+)([ ]*мкГн*)(.*)",
+        "RegexTo": "$1$2uH   $4"
+      },
+      {
+        "DisplayName": "Катушка нГн - nH",
+        "IsEnabled": true,
+        "RegexFrom": "(^L.*)([0-9,]+)([ ]*нГн*)(.*)",
+        "RegexTo": "$1$2nH   $4"
+      },
+      {
         "DisplayName": "Катушка н(ru) - H(en)",
         "IsEnabled": true,
         "RegexFrom": "(^L.*)([0-9,]+)([ ]\\u043d)(.*)",
         "RegexTo": "$1$2H $4"
+      },
+      {
+        "DisplayName": "Конденсаторы убрать пФ",
+        "IsEnabled": true,
+        "RegexFrom": "(^C.*)([ ]пФ)(.*)",
+        "RegexTo": "$1   $3"
+      },
+      {
+        "DisplayName": "Резистор к(RU) - K(EN)",
+        "IsEnabled": true,
+        "RegexFrom": "(^R.*)([0-9,]+)([ ]\\u043A[\\u041E\\u043C]*)(.*)",
+        "RegexTo": "$1$2K$4"
+      },
+      {
+        "DisplayName": "Резистор убрать Ом",
+        "IsEnabled": true,
+        "RegexFrom": "(^R.*)([0-9,]+)([ ]Ом]*)(.*)",
+        "RegexTo": "$1$2   $4"
       }
     ]
   }
