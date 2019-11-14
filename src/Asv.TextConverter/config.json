@@ -68,8 +68,8 @@
       {
         "DisplayName": "Резистор убрать Ом",
         "IsEnabled": true,
-        "RegexFrom": "(^R.*)([0-9,]+)([ ]Ом]*)(.*)",
-        "RegexTo": "$1$2   $4"
+        "RegexFrom": "(^R.*)([0-9,]+)([ ]Ом)(.*)",
+        "RegexTo": "$1$2    $4"
       }
     ]
   }
